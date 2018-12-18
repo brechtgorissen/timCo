@@ -1,5 +1,11 @@
 package gorissen.vleminckx.timco.model;
 
-//TODO
-public interface ProductRepository {
+
+//Liesbeth
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface ProductRepository extends CrudRepository<Product, Integer> {
+
+
 }
