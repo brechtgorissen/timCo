@@ -24,10 +24,10 @@ public class Product {
     private double price;
 
     @NotBlank
-    private Species species;
+    private String species;
 
     @NotBlank
-    private Category category;
+    private String category;
 
     @NotBlank
     private String description;
@@ -59,19 +59,19 @@ public class Product {
         this.price = price;
     }
 
-    public Species getSpecies() {
+    public String getSpecies() {
         return species;
     }
 
-    public void setSpecies(Species species) {
+    public void setSpecies(String species) {
         this.species = species;
     }
 
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
