@@ -1,3 +1,4 @@
+//Brecht
 package gorissen.vleminckx.timco.model;
 
 import java.util.ArrayList;
