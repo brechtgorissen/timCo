@@ -1,7 +1,7 @@
 package gorissen.vleminckx.timco.model;
 
 //Liesbeth
-public enum Diersoort {
+public enum Species {
     HAGEDIS,
     HOND,
     KAT,

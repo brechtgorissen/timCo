@@ -24,10 +24,10 @@ public class Product {
     private double prijs;
 
     @NotBlank
-    private Diersoort diersoort;
+    private Species diersoort;
 
     @NotBlank
-    private Categorie categorie;
+    private Category categorie;
 
     @NotBlank
     private String omschrijving;
@@ -59,19 +59,19 @@ public class Product {
         this.prijs = prijs;
     }
 
-    public Diersoort getDiersoort() {
+    public Species getDiersoort() {
         return diersoort;
     }
 
-    public void setDiersoort(Diersoort diersoort) {
+    public void setDiersoort(Species diersoort) {
         this.diersoort = diersoort;
     }
 
-    public Categorie getCategorie() {
+    public Category getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(Categorie categorie) {
+    public void setCategorie(Category categorie) {
         this.categorie = categorie;
     }
 

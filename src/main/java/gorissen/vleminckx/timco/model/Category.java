@@ -1,6 +1,6 @@
 package gorissen.vleminckx.timco.model;
 
-public enum Categorie {
+public enum Category {
     VOEDING,
     SPEELGOED,
     HABITAT
