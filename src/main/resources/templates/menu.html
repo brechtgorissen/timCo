@@ -1,3 +1,4 @@
+<!--Brecht-->
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
@@ -10,20 +11,23 @@
     <h1>
         Tim & Co
     </h1>
-    <button th:href="@{/basket}">Toon Mandje</button>
+    <button><a th:href="@{/basket}">Toon Mandje</a>></button>
 </div>
 <nav th:fragment="navigation">
     <ul>
         <li>
-
+            <a>Voeding</a>
         </li>
         <li>
-
+            <a>Speelgoed</a>
         </li>
         <li>
-
+            <a>Habitat</a>
         </li>
     </ul>
 </nav>
+<footer th:fragment="footer">
+    &copy;Tim&Co BVBA, 2018
+</footer>
 </body>
 </html>
