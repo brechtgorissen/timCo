@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class IndexController {
 
@@ -25,11 +27,13 @@ public class IndexController {
         return "index";
     }
 
-    /*
+
     @RequestMapping(value= "/index/{category}", method = RequestMethod.GET)
-    public Product findByCategory(@PathVariable (value="category") String category){
-        return repo.findByCategory(category).get();
+    public String findByCategory(ModelMap map,@PathVariable (value="category") String category){
+       map.addAttribute("all", repo.findByCategory(category));
+
+        return "index";
     }
-    */
+
 
 }
