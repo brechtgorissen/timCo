@@ -1,11 +1,11 @@
-<!--Brecht-->
+<!--Liesbeth-->
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>basket</title>
+    <title>index</title>
 
     <!-- bootstrap -->
     <link rel="stylesheet"
@@ -44,24 +44,34 @@
 <body>
 <div th:replace="~{menu::header}"></div>
 <div th:replace="~{menu::navigation}"></div>
-<table>
-    <thead>
-    <tr>
-        <th>Product</th>
-        <th>Diersoort</th>
-        <th>Prijs</th>
-        <th>Details</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="Product:${basket}">
-        <td th:text="${Product.name}"></td>
-        <td th:text="${Product.species}"></td>
-        <td th:text="${Product.price}"></td>
-        <td><a class="button">Toon meer details</a></td>
-    </tr>
-    </tbody>
-</table>
+
+
+<div id="content" class="container">
+    <table>
+        <tr>
+            <td>Item</td>
+
+            <td th:text="${product.name}"></td>
+        </tr>
+        <tr>
+            <td>Prijs</td>
+            <td th:text="${product.price}"></td>
+        </tr>
+        <tr>
+            <td>Dier</td>
+            <td th:text="${product.species}"></td>
+        </tr>
+        <tr>
+            <td>Categorie</td>
+            <td th:text="${product.category}"></td>
+        </tr>
+        <tr>
+            <td>Omschrijving</td>
+            <td th:text="${product.description}"></td>
+        </tr>
+
+    </table>
+</div>
 <div th:replace="~{menu::footer}"></div>
 </body>
 </html>
