@@ -27,7 +27,7 @@ public class BasketController {
 
     @RequestMapping(value = "/basket", method = RequestMethod.GET)
     public String showBasket(ModelMap map){
-        Basket.INSTANCE.getNewBasket();
+
         return "basket";
     }
 

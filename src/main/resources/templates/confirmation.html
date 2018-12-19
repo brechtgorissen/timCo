@@ -1,11 +1,11 @@
-<!--Brecht-->
+<!--Liesbeth-->
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>menu</title>
+    <title>Orderbevestiging</title>
 
     <!-- bootstrap -->
     <link rel="stylesheet"
@@ -14,7 +14,11 @@
           crossorigin="anonymous">
 
     <!-- css -->
-    <link rel="stylesheet" th:href="@{CSS/main.css}">
+    <link rel="stylesheet" th:href="@{css/main.css}">
+
+    <!-- css datatable -->
+    <link rel="stylesheet"
+          href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -38,30 +42,14 @@
 
 </head>
 <body>
-<div id="header" th:fragment="header">
-    <h1>
-        Tim & Co
-    </h1>
-    <button><a th:href="@{/basket}">Toon Mandje</a></button>
+<div th:replace="~{menu::header}"></div>
+<div th:replace="~{menu::navigation}"></div>
+
+
+<div id="content" class="container">
+
+    Orderbevestiging
 </div>
-<nav th:fragment="navigation">
-    <ul>
-        <li>
-            <a th:href="@{/index}">Home</a>
-        </li>
-        <li>
-            <a th:href="@{/index/{voeding}(voeding='Voeding')}">Voeding</a>
-        </li>
-        <li>
-            <a th:href="@{/index/{speelgoed}(speelgoed='Speelgoed')}">Speelgoed</a>
-        </li>
-        <li>
-            <a th:href="@{/index/{habitat}(habitat='Habitat')}">Habitat</a>
-        </li>
-    </ul>
-</nav>
-<footer th:fragment="footer">
-    &copy;Tim&Co BVBA, 2018
-</footer>
+<div th:replace="~{menu::footer}"></div>
 </body>
 </html>

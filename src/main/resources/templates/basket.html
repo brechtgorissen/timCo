@@ -62,6 +62,8 @@
         <td><a class="button" th:href="@{/details/{id}(id=${Product.id})}">Toon meer details</a></td>
         <td><a class="button" th:href="@{/basket/delete/{id}(id=${Product.id})}">Verwijder product</a></td>
     </tr>
+
+    <a class="button" th:href="@{/checkout}">Bestelling afronden</a></td>
     </tbody>
 </table>
 <div th:replace="~{menu::footer}"></div>
