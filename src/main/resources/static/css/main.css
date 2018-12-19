@@ -14,3 +14,8 @@ html body{
 footer{
     text-align: center;
 }
+
+#navigation{
+    background-color: dodgerblue;
+    color: antiquewhite;
+}
