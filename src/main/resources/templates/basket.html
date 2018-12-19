@@ -58,7 +58,7 @@
         <td th:text="${Product.name}"></td>
         <td th:text="${Product.species}"></td>
         <td th:text="${Product.price}"></td>
-        <td><a class="button">Toon meer details</a></td>
+        <td><a class="button" th:href="@{/details/{id}(id=${Product.id})}">Toon meer details</a></td>
     </tr>
     </tbody>
 </table>
