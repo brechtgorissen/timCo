@@ -36,4 +36,5 @@ public class BasketController {
         Basket.INSTANCE.deleteFromBasket(repo.findById(id).get());
         return "redirect:/basket";
     }
+
 }

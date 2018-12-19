@@ -39,7 +39,12 @@
             $('#producttable').DataTable();
         });
     </script>
-
+    <!-- script goback-->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </head>
 <body>
 <div th:replace="~{menu::header}"></div>
@@ -62,7 +67,12 @@
     </tr>
     </tbody>
 </table>
-<a class="button" th:href="@{/checkout}">Bestelling afronden</a>
+<div>
+    <button onclick="goBack()">Verder winkelen</button>
+</div>
+<div>
+   <button><a class="button" th:href="@{/checkout}">Bestelling afronden</a></button>
+</div>
 <div th:replace="~{menu::footer}"></div>
 </body>
 </html>

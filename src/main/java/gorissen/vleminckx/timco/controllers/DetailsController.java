@@ -2,6 +2,7 @@
 
 package gorissen.vleminckx.timco.controllers;
 
+import gorissen.vleminckx.timco.model.Basket;
 import gorissen.vleminckx.timco.model.Product;
 import gorissen.vleminckx.timco.model.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,13 @@ public class DetailsController {
     @RequestMapping(value = "/details/{id}", method = RequestMethod.GET)
     public String showDetails (@PathVariable(name="id") int id , ModelMap map){
 
+        Product detailProduct = repo.findById(id).get();
+        map.addAttribute("product", detailProduct);
+        return "details";
+    }
+    @RequestMapping(value = "/details/add/{id}", method = RequestMethod.GET)
+    public String addToBasket(@PathVariable(value = "id") int id, ModelMap map){
+        Basket.INSTANCE.addToBasket(repo.findById(id).get());
         Product detailProduct = repo.findById(id).get();
         map.addAttribute("product", detailProduct);
         return "details";
