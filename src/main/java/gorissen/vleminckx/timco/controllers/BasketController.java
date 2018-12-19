@@ -17,6 +17,9 @@ import java.util.ArrayList;
 @Controller
 public class BasketController {
 
+    @Autowired
+    private ProductRepository repo;
+
     @ModelAttribute("basket")
     public ArrayList<Product> showNewBasket(){
         return Basket.INSTANCE.getNewBasket();
@@ -24,7 +27,13 @@ public class BasketController {
 
     @RequestMapping(value = "/basket", method = RequestMethod.GET)
     public String showBasket(ModelMap map){
-
+        Basket.INSTANCE.getNewBasket();
         return "basket";
+    }
+
+    @RequestMapping(value = "/basket/delete/{id}", method = RequestMethod.GET)
+    public String deleteFromBasket(@PathVariable(value = "id") int id){
+        Basket.INSTANCE.deleteFromBasket(repo.findById(id).get());
+        return "redirect:/basket";
     }
 }

@@ -51,6 +51,7 @@
         <th>Diersoort</th>
         <th>Prijs</th>
         <th>Details</th>
+        <th>Verwijderen</th>
     </tr>
     </thead>
     <tbody>
@@ -59,6 +60,7 @@
         <td th:text="${Product.species}"></td>
         <td th:text="${Product.price}"></td>
         <td><a class="button" th:href="@{/details/{id}(id=${Product.id})}">Toon meer details</a></td>
+        <td><a class="button" th:href="@{/basket/delete/{id}(id=${Product.id})}">Verwijder product</a></td>
     </tr>
     </tbody>
 </table>
