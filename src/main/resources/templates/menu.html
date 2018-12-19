@@ -5,6 +5,16 @@
 <head>
     <meta charset="UTF-8">
     <title>menu</title>
+
+    <!-- scripts datatable-->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <scrpit src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></scrpit>
+    <script>
+        $(document).ready(function() {
+            $('#producttable').DataTable();
+        } );
+    </script>
+
 </head>
 <body>
 <div th:fragment="header">
@@ -16,13 +26,13 @@
 <nav th:fragment="navigation">
     <ul>
         <li>
-            <a th:href="@{/basket}>Voeding</a>
+            <a th:href="@{/index/{voeding}(voeding='Voeding')}">Voeding</a>
         </li>
         <li>
-            <a>Speelgoed</a>
+            <a th:href="@{/index/{speelgoed}(speelgoed='Speelgoed')}">Speelgoed</a>
         </li>
         <li>
-            <a>Habitat</a>
+            <a th:href="@{/index/{habitat}(habitat='Habitat')}">Habitat</a>
         </li>
     </ul>
 </nav>
