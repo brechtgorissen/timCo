@@ -57,7 +57,6 @@
     <table>
         <tr>
             <td>Item</td>
-
             <td th:text="${product.name}"></td>
         </tr>
         <tr>
@@ -75,19 +74,14 @@
         <tr>
             <td>Omschrijving</td>
             <td th:text="${product.description}"></td>
-        </tr>
-
     </table>
 </div>
 <div>
-    <a class="button" th:href="@{/index/add/{id}(id = ${product.id})}">Voeg toe aan mandje</a>
+    <button><a th:href="@{/details/add/{id}(id = ${product.id})}">Voeg toe aan mandje</a></button>
 </div>
 <div>
-<button onclick="goBack()">Go Back</button>
-    <!-- werkt niet :( -->
-
+<button onclick="goBack()">Terug naar overzicht</button>
 </div>
-
 <div th:replace="~{menu::footer}"></div>
 </body>
 </html>
