@@ -35,9 +35,16 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <scrpit src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></scrpit>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#producttable').DataTable();
-        } );
+        });
+    </script>
+
+    <!-- script goback-->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
     </script>
 
 </head>
@@ -72,6 +79,15 @@
 
     </table>
 </div>
+<div>
+    <a class="button" th:href="@{/index/add/{id}(id = ${product.id})}">Voeg toe aan mandje</a>
+</div>
+<div>
+<button onclick="goBack()">Go Back</button>
+    <!-- werkt niet :( -->
+
+</div>
+
 <div th:replace="~{menu::footer}"></div>
 </body>
 </html>

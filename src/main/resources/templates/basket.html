@@ -35,9 +35,9 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <scrpit src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></scrpit>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#producttable').DataTable();
-        } );
+        });
     </script>
 
 </head>
@@ -62,7 +62,7 @@
     </tr>
     </tbody>
 </table>
-<a class="button" th:href="@{/checkout}">Bestelling afronden</a></td>
+<a class="button" th:href="@{/checkout}">Bestelling afronden</a>
 <div th:replace="~{menu::footer}"></div>
 </body>
 </html>
