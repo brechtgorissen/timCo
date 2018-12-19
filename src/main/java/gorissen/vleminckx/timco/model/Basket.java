@@ -6,17 +6,23 @@ import java.util.ArrayList;
 public enum Basket {
 
     INSTANCE(new ArrayList<Product>());
-    private ArrayList<Product> basket;
 
-    private Basket(ArrayList<Product> basket) {
-        this.basket = basket;
+    private ArrayList<Product> newBasket;
+
+    private Basket (ArrayList<Product> newBasket) {
+
+        this.newBasket= newBasket;
     }
 
-    public ArrayList<Product> getBasket() {
-        return basket;
+    public ArrayList<Product> getNewBasket() {
+        return newBasket;
     }
 
-    public void setBasket(ArrayList<Product> basket) {
-        this.basket = basket;
+    public void setNewBasket(ArrayList<Product> newBasket) {
+        this.newBasket = newBasket;
+    }
+
+    public void addToBasket(Product product){
+        newBasket.add(product);
     }
 }

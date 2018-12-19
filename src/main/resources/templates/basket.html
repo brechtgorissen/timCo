@@ -34,6 +34,24 @@
 <body>
 <div th:replace="~{menu::header}"></div>
 <div th:replace="~{menu::navigation}"></div>
+<table>
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Diersoort</th>
+        <th>Prijs</th>
+        <th>Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="Product:${basket}">
+        <td th:text="${Product.name}"></td>
+        <td th:text="${Product.species}"></td>
+        <td th:text="${Product.price}"></td>
+        <td><a class="button">Toon meer details</a></td>
+    </tr>
+    </tbody>
+</table>
 <div th:replace="~{menu::footer}"></div>
 </body>
 </html>

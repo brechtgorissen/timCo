@@ -33,7 +33,6 @@ public class IndexController {
         return "index";
     }
 
-
     @RequestMapping(value= "/index/{category}", method = RequestMethod.GET)
     public String findByCategory(ModelMap map,@PathVariable (value="category") String category){
        map.addAttribute("all", repo.findByCategory(category));
@@ -41,10 +40,9 @@ public class IndexController {
         return "index";
     }
 
-
-    @RequestMapping(value = "index/add/{id}", method = RequestMethod.POST)
-    public String addToBasket(@PathVariable (value = "id") int id, ArrayList<Product> basket){
-        Basket.INSTANCE.setBasket(basket);
+    @RequestMapping(value = "/index/add/{id}", method = RequestMethod.GET)
+    public String addToBasket(@PathVariable(value = "id") int id, ModelMap map){
+        Basket.INSTANCE.addToBasket(repo.findById(id).get());
         return "redirect:/index";
     }
 }
