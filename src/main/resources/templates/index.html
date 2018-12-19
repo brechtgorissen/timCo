@@ -60,7 +60,8 @@ xmlns:th="http://www.thymeleaf.org">
             <td th:text="${Product.name}"></td>
             <td th:text="${Product.species}"></td>
             <td th:text="${Product.price}"></td>
-            <td><a class="button">Toon meer details</a></td>
+            <td><a class="button" th:href="@{/details/{id}(id=${Product.id})}">Toon meer details</a></td>
+
             <td><a class="button" th:href="@{/index/add/{id}(id = ${Product.id})}">Voeg toe aan mandje</a></td>
         </tr>
     </tbody>
