@@ -45,18 +45,18 @@
     <button><a th:href="@{/basket}">Toon Mandje</a></button>
 </div>
 <nav id="navigation" th:fragment="navigation">
-    <ul>
-        <li>
-            <a th:href="@{/index}">Home</a>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a  class="nav-link" th:href="@{/index}">Home</a>
         </li>
-        <li>
-            <a th:href="@{/index/{voeding}(voeding='Voeding')}">Voeding</a>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/index/{voeding}(voeding='Voeding')}">Voeding</a>
         </li>
-        <li>
-            <a th:href="@{/index/{speelgoed}(speelgoed='Speelgoed')}">Speelgoed</a>
+        <li class="nav-item">
+            <a class="nav-link" role="button" th:href="@{/index/{speelgoed}(speelgoed='Speelgoed')}">Speelgoed</a>
         </li>
-        <li>
-            <a th:href="@{/index/{habitat}(habitat='Habitat')}">Habitat</a>
+        <li class="nav-item">
+            <a class="nav-link" role="button" th:href="@{/index/{habitat}(habitat='Habitat')}">Habitat</a>
         </li>
     </ul>
 </nav>
