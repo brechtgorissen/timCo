@@ -29,4 +29,5 @@ public enum Basket {
     public void deleteFromBasket(Product product){
         newBasket.remove(product);
     }
-}
+
+    }
