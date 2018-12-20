@@ -47,6 +47,7 @@
 <body>
 <div th:replace="~{menu::header}"></div>
 <div th:replace="~{menu::navigation}"></div>
+<div><h2>Adresgegevens bevestigen</h2></div>
 <form method="post" th:action="@{~/confirmation}" th:object="${newUser}">
     <div class="form-row">
         <div class="col-md-3 mb-3">
@@ -93,6 +94,7 @@
         </div>
     </div>
     <button class="btn btn-primary" th:field="submit">Bestelling bevestigen</button>
+    <btn class="btn btn-primary" onclick="goBack()">Terug naar winkelmandje</btn>
 </form>
 <div th:replace="~{menu::footer}"></div>
 </body>

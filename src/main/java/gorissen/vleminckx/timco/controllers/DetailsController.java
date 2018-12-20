@@ -30,7 +30,7 @@ public class DetailsController {
         Basket.INSTANCE.addToBasket(repo.findById(id).get());
         Product detailProduct = repo.findById(id).get();
         map.addAttribute("product", detailProduct);
-        return "details";
+        return "redirect:/basket";
     }
 
 }

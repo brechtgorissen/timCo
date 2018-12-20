@@ -43,6 +43,6 @@ public class IndexController {
     @RequestMapping(value = "/index/add/{id}", method = RequestMethod.GET)
     public String addToBasket(@PathVariable(value = "id") int id){
         Basket.INSTANCE.addToBasket(repo.findById(id).get());
-        return "redirect:/index";
+        return "redirect:/basket";
     }
 }

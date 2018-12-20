@@ -54,6 +54,7 @@
 <body>
 <div th:replace="~{menu::header}"></div>
 <div th:replace="~{menu::navigation}"></div>
+<div><h2>Productdetails</h2></div>
 <div id="details" class="table-responsive">
         <table id="detailstable" class="table">
             <tr>
@@ -78,8 +79,12 @@
         </table>
 </div>
 <div>
-    <btn class="btn btn-primary" onclick="goBack()">Terug naar overzicht</btn>
-    <a class="btn btn-primary" th:href="@{/details/add/{id}(id = ${product.id})}">Voeg toe aan mandje</a>
+    <btn class="btn btn-primary" onclick="goBack()">Terug naar productcatalogus</btn>
+    <a th:href="@{/details/add/{id}(id = ${product.id})}"><i class="fas fa-shopping-cart"> </i></a>
+
+
+
+
 </div>
 <div th:replace="~{menu::footer}"></div>
 </body>
