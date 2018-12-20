@@ -14,7 +14,8 @@
           crossorigin="anonymous">
 
     <!-- fontawesome stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
     <!-- css -->
     <link rel="stylesheet" th:href="@{css/main.css}">
@@ -55,29 +56,28 @@
 <div id="products" class="table-responsive">
     <table id="producttable" class="table">
         <thead>
-            <tr>
-                <th>Product</th>
-                <th>Diersoort</th>
-                <th>Prijs</th>
-                <th>Verwijderen</th>
-            </tr>
+        <tr>
+            <th>Product</th>
+            <th>Diersoort</th>
+            <th>Prijs</th>
+            <th>Verwijderen</th>
+        </tr>
         </thead>
         <tbody>
-            <tr th:each="Product:${basket}">
-                <td th:text="${Product.name}"></td>
-                <td th:text="${Product.species}"></td>
-                <td th:text="${Product.price}"></td>
-                <td><a class="button" th:href="@{/basket/delete/{id}(id=${Product.id})}">Verwijder product</a></td>
-            </tr>
+        <tr th:each="Product:${basket}">
+            <td th:text="${Product.name}"></td>
+            <td th:text="${Product.species}"></td>
+            <td th:text="${Product.price}"></td>
+            <td><a class="button" th:href="@{/basket/delete/{id}(id=${Product.id})}"><i
+                    class="far fa-trash-alt"></i></a></td>
+        </tr>
         </tbody>
     </table>
+</div>
 <div>
-
-    <button class="btn btn-primary"  onclick="goBack()" >Verder Winkelen</button>
+    <button class="btn btn-primary" onclick="goBack()">Verder Winkelen</button>
 
     <button class="btn btn-primary"><a th:href="@{/checkout}">Bestelling afronden</a></button>
-
-
 </div>
 <div th:replace="~{menu::footer}"></div>
 </body>
