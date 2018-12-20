@@ -27,3 +27,8 @@ footer{
     background-color: darkorange;
     color: antiquewhite;
 }
+
+.error{
+    color: red;
+    font-style: italic;
+}
