@@ -32,18 +32,10 @@
             crossorigin="anonymous"></script>
 
 
-    <!-- scripts datatable-->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#producttable').DataTable();
-        });
-    </script>
 
 </head>
 <body>
-<div id="header" th:fragment="header" class="row">
+<div id="header" th:fragment="header" class="row container-fluid">
     <div class="col-sm-3">
         <img class="rounded-circle"
              src="https://previews.123rf.com/images/yod67/yod671602/yod67160200012/53007354-vector-group-of-pets-horse-dog-cat-bird-butterfly-dragonfly-isolated-on-white-background.jpg"
@@ -53,7 +45,7 @@
         <h1>Tim & Co</h1>
     </div>
 </div>
-<nav id="navigation" th:fragment="navigation">
+<nav id="navigation" th:fragment="navigation" class="container-fluid">
     <ul class="nav nav-pills">
         <li class="nav-item">
             <a class="nav-link" th:href="@{/index}"><i class="fas fa-home"></i></a>

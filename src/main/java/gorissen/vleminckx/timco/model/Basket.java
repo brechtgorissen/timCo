@@ -9,17 +9,13 @@ public enum Basket {
 
     private ArrayList<Product> newBasket;
 
-    private Basket(ArrayList<Product> newBasket) {
+    Basket(ArrayList<Product> newBasket) {
 
         this.newBasket = newBasket;
     }
 
     public ArrayList<Product> getNewBasket() {
         return newBasket;
-    }
-
-    public void setNewBasket(ArrayList<Product> newBasket) {
-        this.newBasket = newBasket;
     }
 
     public void addToBasket(Product product) {

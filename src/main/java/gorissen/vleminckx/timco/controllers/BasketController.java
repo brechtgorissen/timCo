@@ -6,7 +6,6 @@ import gorissen.vleminckx.timco.model.Product;
 import gorissen.vleminckx.timco.model.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,18 +20,18 @@ public class BasketController {
     private ProductRepository repo;
 
     @ModelAttribute("basket")
-    public ArrayList<Product> showNewBasket(){
+    public ArrayList<Product> showNewBasket() {
         return Basket.INSTANCE.getNewBasket();
     }
 
     @RequestMapping(value = "/basket", method = RequestMethod.GET)
-    public String showBasket(ModelMap map){
+    public String showBasket() {
 
         return "basket";
     }
 
     @RequestMapping(value = "/basket/delete/{id}", method = RequestMethod.GET)
-    public String deleteFromBasket(@PathVariable(value = "id") int id){
+    public String deleteFromBasket(@PathVariable(value = "id") int id) {
         Basket.INSTANCE.deleteFromBasket(repo.findById(id).get());
         return "redirect:/basket";
     }

@@ -40,13 +40,6 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#detailstable').DataTable();
-        });
-    </script>
-
-    <!-- script goback-->
-    <script>
-        $(document).ready(function () {
             $('#producttable').DataTable({
                 "language": {
                     "search": "Zoek",
@@ -56,7 +49,7 @@
                         "next": "Volgende",
                         "previous": "Vorige"
                     },
-                    "lengthMenu": "Toon _MENU_ producten",
+                    "lengthMenu": "Toon _MENU_ producten"
                 },
                 "paging": true,
                 "info": false,
@@ -66,6 +59,16 @@
             });
         });
     </script>
+
+    <!-- script goback-->
+
+    <!-- script goback-->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
 
 </head>
 <body>
@@ -96,8 +99,8 @@
     </table>
 </div>
 <div>
-    <btn class="btn btn-primary" onclick="goBack()">Terug naar productcatalogus</btn>
-    <a th:href="@{/details/add/{id}(id = ${product.id})}"><i class="fas fa-shopping-cart"> </i></a>
+    <button class="btn btn-primary" onclick="goBack()">Terug naar productcatalogus</button>
+    <a id="cart" th:href="@{/details/add/{id}(id = ${product.id})}"><i class="fas fa-shopping-cart"> </i></a>
 
 
 </div>

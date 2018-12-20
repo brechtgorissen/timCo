@@ -35,14 +35,7 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
 
-    <!-- scripts datatable-->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#producttable').DataTable();
-        });
-    </script>
+
 
 </head>
 <body>
@@ -51,11 +44,9 @@
 
 
 <div id="content" class="container">
-    <div><h2>Uw bestelling is bevestigd!</h2></div>
+    <h2>Uw bestelling is bevestigd!</h2><br>
+    <a class="btn btn-primary" th:href="@{/index}">Verder winkelen</a>
 </div>
-<div><a class="btn btn-primary" th:href="@{/index}">Verder winkelen</a>
-</div>
-
 
 
 </body>

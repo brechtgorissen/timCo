@@ -1,4 +1,4 @@
-html body{
+html body {
     width: 100%;
     background-color: antiquewhite;
     color: dodgerblue;
@@ -16,8 +16,13 @@ html body{
     margin: 20px;
 }
 
-#header h1{
-    font-size: 8em;
+#header h1 {
+    font-size: 5em;
+}
+
+h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 footer {
@@ -25,34 +30,35 @@ footer {
     width: 100%;
     text-align: center;
     position: fixed;
-    left: 0 ;
+    left: 0;
     bottom: 0;
     z-index: 10000;
-    height:30px;
+    height: 30px;
     background-color: lightgrey;
     color: dodgerblue;
 
 }
 
-
-#navigation{
+#navigation {
     background-color: lightgrey;
     color: antiquewhite;
     margin-top: 20px;
 }
 
-.error{
+.error {
     color: red;
     font-style: italic;
 }
 
 button {
-    margin-left: 30px;
+
+    margin-right: 20px;
 }
 
-btn {
-    margin-right: 30px;
+#cart {
+    margin-left: 20px;
 }
-#userform{
+
+#userform {
     text-align: left;
 }

@@ -1,35 +1,35 @@
 //Liesbeth
 package gorissen.vleminckx.timco.model;
 
-import javax.validation.constraints.DecimalMin;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+
 
 public class User {
 
-    @NotBlank (message = "Gelieve uw naam in te vullen")
+    @NotBlank(message = "Gelieve uw naam in te vullen")
     private String surName;
 
-    @NotBlank (message = "Gelieve uw voornaam in te vullen")
+    @NotBlank(message = "Gelieve uw voornaam in te vullen")
     private String name;
 
-    @NotBlank (message = "Gelieve uw straatnaam in te vullen")
+    @NotBlank(message = "Gelieve uw straatnaam in te vullen")
     private String street;
 
-    @NotBlank (message = "Gelieve uw huisnummer in te vullen")
+    @NotBlank(message = "Gelieve uw huisnummer in te vullen")
     private String houseNumber;
 
-    @NotBlank (message ="Gelieve de bus in te vullen")
+    @NotBlank(message = "Gelieve de bus in te vullen")
     private String box;
 
-    @NotBlank (message = "Gelieve uw postcode in te vullen")
+    @NotBlank(message = "Gelieve uw postcode in te vullen")
     private String postalCode;
 
-    @NotBlank (message ="Gelieve uw woonplaats in te vullen")
+    @NotBlank(message = "Gelieve uw woonplaats in te vullen")
     private String place;
 
-    @NotBlank (message = "Gelieve uw e-mailadres in te vullen")
+    @NotBlank(message = "Gelieve uw e-mailadres in te vullen")
     @Email(message = "E-mailadres is niet geldig")
     private String email;
 

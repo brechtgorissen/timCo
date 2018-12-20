@@ -40,7 +40,7 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#producttable').DataTable({
+            $('#baskettable').DataTable({
                 "language": {
                     "search": "Zoek",
                     "paginate": {
@@ -49,7 +49,7 @@
                         "next": "Volgende",
                         "previous": "Vorige"
                     },
-                    "lengthMenu": "Toon _MENU_ producten",
+                    "lengthMenu": "Toon _MENU_ producten"
                 },
                 "paging": true,
                 "info": false,
@@ -60,13 +60,14 @@
         });
     </script>
 
-
     <!-- script goback-->
     <script>
         function goBack() {
             window.history.back();
         }
     </script>
+
+
 </head>
 <body>
 <div th:replace="~{menu::header}"></div>
@@ -94,7 +95,7 @@
     </table>
 </div>
 <div>
-    <btn class="btn btn-primary" onclick="goBack()">Verder Winkelen</btn>
+    <a class="btn btn-primary" th:href="@{/index}">Verder Winkelen</a>
     <a class="btn btn-primary" th:href="@{/checkout}">Bestelling afronden</a>
 </div>
 
