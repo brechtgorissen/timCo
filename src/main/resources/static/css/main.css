@@ -32,3 +32,8 @@ footer{
     color: red;
     font-style: italic;
 }
+
+#header h1{
+    display: inline-block;
+    text-align: left;
+}

@@ -17,15 +17,13 @@ public class User {
     @NotBlank (message = "Gelieve uw straatnaam in te vullen")
     private String street;
 
-    @NotNull (message = "Gelieve uw huisnummer in te vullen")
-    @DecimalMin(value = "0", message = "Verkeerd huisnummer")
+    @NotBlank (message = "Gelieve uw huisnummer in te vullen")
     private int houseNumber;
 
     @NotBlank (message ="Gelieve de bus in te vullen")
     private String box;
 
-    @NotNull (message = "Gelieve uw postcode in te vullen")
-    @DecimalMin(value = "0", message = "Verkeerde postcode")
+    @NotBlank (message = "Gelieve uw postcode in te vullen")
     private int postalCode;
 
     @NotBlank (message ="Gelieve uw woonplaats in te vullen")
