@@ -1,9 +1,7 @@
-
-
 html body{
     width: 100%;
     background-color: antiquewhite;
-    color: darkolivegreen;
+    color: dodgerblue;
     padding: 20px;
 }
 
@@ -24,7 +22,7 @@ footer{
 
 
 #navigation{
-    background-color: darkorange;
+    background-color: lightgrey;
     color: antiquewhite;
 }
 
@@ -36,4 +34,8 @@ footer{
 #header h1{
     display: inline-block;
     text-align: left;
+}
+
+button {
+    margin-left: 30px;
 }
