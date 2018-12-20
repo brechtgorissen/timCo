@@ -71,10 +71,12 @@
     </tbody>
 </table>
 <div>
-    <button onclick="goBack()">Verder winkelen</button>
-</div>
-<div>
-   <button><a class="button" th:href="@{/checkout}">Bestelling afronden</a></button>
+
+    <button class="btn btn-primary"  onclick="goBack()" >Verder Winkelen</button>
+
+    <button class="btn btn-primary"><a th:href="@{/checkout}">Bestelling afronden</a></button>
+
+
 </div>
 <div th:replace="~{menu::footer}"></div>
 </body>

@@ -17,16 +17,14 @@ public class User {
     @NotBlank (message = "Gelieve uw straatnaam in te vullen")
     private String street;
 
-    @NotNull (message = "Gelieve uw huisnummer in te vullen")
-    @DecimalMin(value = "0", message = "Verkeerd huisnummer")
-    private int houseNumber;
+    @NotBlank (message = "Gelieve uw huisnummer in te vullen")
+    private String houseNumber;
 
     @NotBlank (message ="Gelieve de bus in te vullen")
     private String box;
 
-    @NotNull (message = "Gelieve uw postcode in te vullen")
-    @DecimalMin(value = "0", message = "Verkeerde postcode")
-    private int postalCode;
+    @NotBlank (message = "Gelieve uw postcode in te vullen")
+    private String postalCode;
 
     @NotBlank (message ="Gelieve uw woonplaats in te vullen")
     private String place;
@@ -62,11 +60,11 @@ public class User {
         this.street = street;
     }
 
-    public int getHouseNumber() {
+    public String getHouseNumber() {
         return houseNumber;
     }
 
-    public void setHouseNumber(int houseNumber) {
+    public void setHouseNumber(String houseNumber) {
         this.houseNumber = houseNumber;
     }
 
@@ -78,11 +76,11 @@ public class User {
         this.box = box;
     }
 
-    public int getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(int postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 
