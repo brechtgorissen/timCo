@@ -11,15 +11,17 @@ html body{
 }
 
 #header{
-    left: 0;
-    top: 0;
-    z-index: 100000;;
+    padding: 20px;
+}
+
+#header h1{
+    display: inline-block;
+    text-align: left;
 }
 
 footer{
     text-align: center;
 }
-
 
 #navigation{
     background-color: lightgrey;
@@ -29,11 +31,6 @@ footer{
 .error{
     color: red;
     font-style: italic;
-}
-
-#header h1{
-    display: inline-block;
-    text-align: left;
 }
 
 button {

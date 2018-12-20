@@ -39,7 +39,7 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#producttable').DataTable();
+            $('#detailstable').DataTable();
         });
     </script>
 
@@ -54,36 +54,32 @@
 <body>
 <div th:replace="~{menu::header}"></div>
 <div th:replace="~{menu::navigation}"></div>
-
-
-<div id="content" class="container">
-    <table>
-        <tr>
-            <td>Item</td>
-            <td th:text="${product.name}"></td>
-        </tr>
-        <tr>
-            <td>Prijs</td>
-            <td th:text="${product.price}"></td>
-        </tr>
-        <tr>
-            <td>Dier</td>
-            <td th:text="${product.species}"></td>
-        </tr>
-        <tr>
-            <td>Categorie</td>
-            <td th:text="${product.category}"></td>
-        </tr>
-        <tr>
-            <td>Omschrijving</td>
-            <td th:text="${product.description}"></td>
-    </table>
+<div id="details" class="table-responsive">
+        <table id="detailstable" class="table">
+            <tr>
+                <td>Item</td>
+                <td th:text="${product.name}"></td>
+            </tr>
+            <tr>
+                <td>Prijs</td>
+                <td th:text="${product.price}"></td>
+            </tr>
+            <tr>
+                <td>Dier</td>
+                <td th:text="${product.species}"></td>
+            </tr>
+            <tr>
+                <td>Categorie</td>
+                <td th:text="${product.category}"></td>
+            </tr>
+            <tr>
+                <td>Omschrijving</td>
+                <td th:text="${product.description}"></td>
+        </table>
 </div>
 <div>
-    <button><a th:href="@{/details/add/{id}(id = ${product.id})}">Voeg toe aan mandje</a></button>
-</div>
-<div>
-<button onclick="goBack()">Terug naar overzicht</button>
+    <btn class="btn btn-primary" onclick="goBack()">Terug naar overzicht</btn>
+    <a class="btn btn-primary" th:href="@{/details/add/{id}(id = ${product.id})}">Voeg toe aan mandje</a>
 </div>
 <div th:replace="~{menu::footer}"></div>
 </body>
