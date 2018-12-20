@@ -66,60 +66,64 @@
 <div th:replace="~{menu::header}"></div>
 <div th:replace="~{menu::navigation}"></div>
 <div><h2>Adresgegevens bevestigen</h2></div>
-<form method="post" th:action="@{~/confirmation}" th:object="${newUser}">
+<form id="userform" method="post" th:action="@{~/confirmation}" th:object="${newUser}">
     <div class="form-row">
-        <div class="col-md-3 mb-3">
-            <label>Naam</label>
+        <div class="col-sm-4">
+            <label>Naam</label><br>
             <input type="text" th:field="*{surName}" placeholder="Tim">
             <div class="invalid-feedback" th:if="${#fields.hasErrors('surName')}" th:errors="*{surName}"
                  th:class="error"></div>
         </div>
-        <div class="col-md-3 mb-3">
-            <label>Voornaam</label>
+        <div class="col-sm-4">
+            <label>Voornaam</label><br>
             <input type="text" th:field="*{name}" placeholder="Vande Winkel">
             <div class="invalid-feedback" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
                  th:class="error"></div>
         </div>
-        <div class="col-md-3 mb-3">
-            <label>Straat</label>
+    </div>
+    <div class="form-row">
+        <div class="col-sm-4">
+            <label>Straat</label><br>
             <input type="text" th:field="*{street}" placeholder="Winkelstraat">
             <div class="invalid-feedback" th:if="${#fields.hasErrors('street')}" th:errors="*{street}"
                  th:class="error"></div>
         </div>
-        <div class="col-md-3 mb-3">
-            <label>Huisnummer</label>
+        <div class="col-sm-4">
+            <label>Huisnummer</label><br>
             <input type="text" th:field="*{houseNumber}" placeholder="35">
             <div class="invalid-feedback" th:if="${#fields.hasErrors('houseNumber')}" th:errors="*{houseNumber}"
                  th:class="error"></div>
         </div>
-    </div>
-    <div class="form-row">
-        <div class="col-md-3 mb-3">
-            <label>Bus</label>
+        <div class="col-sm-4">
+            <label>Bus</label><br>
             <input type="text" th:field="*{box}" placeholder="a">
             <div class="invalid-feedback" th:if="${#fields.hasErrors('box')}" th:errors="*{box}" th:class="error"></div>
         </div>
-        <div class="col-md-3 mb-3">
-            <label>Postcode</label>
+    </div>
+    <div class="form-row">
+        <div class="col-sm-4">
+            <label>Postcode</label><br>
             <input type="text" th:field="*{postalCode}" placeholder="9876">
             <div class="invalid-feedback" th:if="${#fields.hasErrors('postalCode')}" th:errors="*{postalCode}"
                  th:class="error"></div>
         </div>
-        <div class="col-md-3 mb-3">
-            <label>Woonplaats</label>
+        <div class="col-sm-4">
+            <label>Woonplaats</label><br>
             <input type="text" th:field="*{place}" placeholder="Winkelgem">
             <div class="invalid-feedback" th:if="${#fields.hasErrors('place')}" th:errors="*{place}"
                  th:class="error"></div>
         </div>
-        <div class="col-md-3 mb-3">
-            <label>E-mailadres</label>
+    </div>
+    <div class="form-row">
+        <div class="col-sm-4">
+            <label>E-mailadres</label><br>
             <input type="text" th:field="*{email}" placeholder="jefkevanhoutem@gmail.com">
             <div class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
                  th:class="error"></div>
         </div>
-    </div>
+    </div><br>
+    <a class="btn btn-primary" th:href="@{/basket}">Terug naar winkelmandje</a>
     <button class="btn btn-primary" th:field="submit">Bestelling bevestigen</button>
-    <btn class="btn btn-primary" onclick="goBack()">Terug naar winkelmandje</btn>
 </form>
 
 </body>

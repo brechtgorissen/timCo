@@ -1,4 +1,4 @@
-html body {
+html body{
     width: 100%;
     background-color: antiquewhite;
     color: dodgerblue;
@@ -13,11 +13,11 @@ html body {
 
 #header {
     padding: 20px;
+    margin: 20px;
 }
 
-#header h1 {
-    display: inline-block;
-    text-align: left;
+#header h1{
+    font-size: 8em;
 }
 
 footer {
@@ -35,13 +35,13 @@ footer {
 }
 
 
-#navigation {
+#navigation{
     background-color: lightgrey;
     color: antiquewhite;
-
+    margin-top: 20px;
 }
 
-.error {
+.error{
     color: red;
     font-style: italic;
 }
@@ -53,4 +53,6 @@ button {
 btn {
     margin-right: 30px;
 }
-
+#userform{
+    text-align: left;
+}
