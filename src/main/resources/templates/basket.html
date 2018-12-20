@@ -39,7 +39,7 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#producttable').DataTable();
+            $('#baskettable').DataTable();
         });
     </script>
     <!-- script goback-->
@@ -52,24 +52,25 @@
 <body>
 <div th:replace="~{menu::header}"></div>
 <div th:replace="~{menu::navigation}"></div>
-<table>
-    <thead>
-    <tr>
-        <th>Product</th>
-        <th>Diersoort</th>
-        <th>Prijs</th>
-        <th>Verwijderen</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="Product:${basket}">
-        <td th:text="${Product.name}"></td>
-        <td th:text="${Product.species}"></td>
-        <td th:text="${Product.price}"></td>
-        <td><a class="button" th:href="@{/basket/delete/{id}(id=${Product.id})}">Verwijder product</a></td>
-    </tr>
-    </tbody>
-</table>
+<div id="products" class="table-responsive">
+    <table id="producttable" class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Diersoort</th>
+                <th>Prijs</th>
+                <th>Verwijderen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="Product:${basket}">
+                <td th:text="${Product.name}"></td>
+                <td th:text="${Product.species}"></td>
+                <td th:text="${Product.price}"></td>
+                <td><a class="button" th:href="@{/basket/delete/{id}(id=${Product.id})}">Verwijder product</a></td>
+            </tr>
+        </tbody>
+    </table>
 <div>
     <button onclick="goBack()">Verder winkelen</button>
 </div>
