@@ -9,9 +9,9 @@ public enum Basket {
 
     private ArrayList<Product> newBasket;
 
-    private Basket (ArrayList<Product> newBasket) {
+    private Basket(ArrayList<Product> newBasket) {
 
-        this.newBasket= newBasket;
+        this.newBasket = newBasket;
     }
 
     public ArrayList<Product> getNewBasket() {
@@ -22,12 +22,12 @@ public enum Basket {
         this.newBasket = newBasket;
     }
 
-    public void addToBasket(Product product){
+    public void addToBasket(Product product) {
         newBasket.add(product);
     }
 
-    public void deleteFromBasket(Product product){
+    public void deleteFromBasket(Product product) {
         newBasket.remove(product);
     }
 
-    }
+}

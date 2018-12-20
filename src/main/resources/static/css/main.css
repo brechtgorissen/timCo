@@ -1,8 +1,9 @@
-html body{
+html body {
     width: 100%;
     background-color: antiquewhite;
     color: dodgerblue;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 .nav-item {
@@ -10,25 +11,37 @@ html body{
     margin-right: 30px;
 }
 
-#header{
+#header {
     padding: 20px;
 }
 
-#header h1{
+#header h1 {
     display: inline-block;
     text-align: left;
 }
 
-footer{
+footer {
+
+    width: 100%;
     text-align: center;
+    position: fixed;
+    left: 0 ;
+    bottom: 0;
+    z-index: 10000;
+    height:30px;
+    background-color: lightgrey;
+    color: dodgerblue;
+
 }
 
-#navigation{
+
+#navigation {
     background-color: lightgrey;
     color: antiquewhite;
+
 }
 
-.error{
+.error {
     color: red;
     font-style: italic;
 }

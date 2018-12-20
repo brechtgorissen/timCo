@@ -14,7 +14,8 @@
           crossorigin="anonymous">
 
     <!-- fontawesome stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
     <!-- css -->
     <link rel="stylesheet" th:href="@{~/css/main.css}">
@@ -45,9 +46,25 @@
 
     <!-- script goback-->
     <script>
-        function goBack() {
-            window.history.back();
-        }
+        $(document).ready(function () {
+            $('#producttable').DataTable({
+                "language": {
+                    "search": "Zoek",
+                    "paginate": {
+                        "first": "Eerste",
+                        "last": "Laatste",
+                        "next": "Volgende",
+                        "previous": "Vorige"
+                    },
+                    "lengthMenu": "Toon _MENU_ producten",
+                },
+                "paging": true,
+                "info": false,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true
+            });
+        });
     </script>
 
 </head>
@@ -56,36 +73,36 @@
 <div th:replace="~{menu::navigation}"></div>
 <div><h2>Productdetails</h2></div>
 <div id="details" class="table-responsive">
-        <table id="detailstable" class="table">
-            <tr>
-                <td>Item</td>
-                <td th:text="${product.name}"></td>
-            </tr>
-            <tr>
-                <td>Prijs</td>
-                <td th:text="${product.price}"></td>
-            </tr>
-            <tr>
-                <td>Dier</td>
-                <td th:text="${product.species}"></td>
-            </tr>
-            <tr>
-                <td>Categorie</td>
-                <td th:text="${product.category}"></td>
-            </tr>
-            <tr>
-                <td>Omschrijving</td>
-                <td th:text="${product.description}"></td>
-        </table>
+    <table id="detailstable" class="table">
+        <tr>
+            <td>Item</td>
+            <td th:text="${product.name}"></td>
+        </tr>
+        <tr>
+            <td>Prijs</td>
+            <td th:text="${product.price}"></td>
+        </tr>
+        <tr>
+            <td>Dier</td>
+            <td th:text="${product.species}"></td>
+        </tr>
+        <tr>
+            <td>Categorie</td>
+            <td th:text="${product.category}"></td>
+        </tr>
+        <tr>
+            <td>Omschrijving</td>
+            <td th:text="${product.description}"></td>
+    </table>
 </div>
 <div>
     <btn class="btn btn-primary" onclick="goBack()">Terug naar productcatalogus</btn>
     <a th:href="@{/details/add/{id}(id = ${product.id})}"><i class="fas fa-shopping-cart"> </i></a>
 
 
-
-
 </div>
-<div th:replace="~{menu::footer}"></div>
+
 </body>
+
+<div th:replace="~{menu::footer}"></div>
 </html>

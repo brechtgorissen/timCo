@@ -23,25 +23,25 @@ public class IndexController {
     private ProductRepository repo;
 
     @ModelAttribute("all")
-    public Iterable<Product> getAll(){
+    public Iterable<Product> getAll() {
         return repo.findAll();
     }
 
-    @RequestMapping(value = {"/index","/"}, method = RequestMethod.GET)
-    public String showIndex(ModelMap map){
+    @RequestMapping(value = {"/index", "/"}, method = RequestMethod.GET)
+    public String showIndex(ModelMap map) {
 
         return "index";
     }
 
-    @RequestMapping(value= "/index/{category}", method = RequestMethod.GET)
-    public String findByCategory(ModelMap map,@PathVariable (value="category") String category){
-       map.addAttribute("all", repo.findByCategory(category));
+    @RequestMapping(value = "/index/{category}", method = RequestMethod.GET)
+    public String findByCategory(ModelMap map, @PathVariable(value = "category") String category) {
+        map.addAttribute("all", repo.findByCategory(category));
 
         return "index";
     }
 
     @RequestMapping(value = "/index/add/{id}", method = RequestMethod.GET)
-    public String addToBasket(@PathVariable(value = "id") int id){
+    public String addToBasket(@PathVariable(value = "id") int id) {
         Basket.INSTANCE.addToBasket(repo.findById(id).get());
         return "redirect:/basket";
     }

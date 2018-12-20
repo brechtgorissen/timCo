@@ -14,7 +14,8 @@
           crossorigin="anonymous">
 
     <!-- fontawesome stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
     <!-- css -->
     <link rel="stylesheet" th:href="@{css/main.css}">
@@ -39,9 +40,26 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#producttable').DataTable();
+            $('#producttable').DataTable({
+                "language": {
+                    "search": "Zoek",
+                    "paginate": {
+                        "first": "Eerste",
+                        "last": "Laatste",
+                        "next": "Volgende",
+                        "previous": "Vorige"
+                    },
+                    "lengthMenu": "Toon _MENU_ producten",
+                },
+                "paging": true,
+                "info": false,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true
+            });
         });
     </script>
+
 
 </head>
 <body>
@@ -53,22 +71,26 @@
         <div class="col-md-3 mb-3">
             <label>Naam</label>
             <input type="text" th:field="*{surName}" placeholder="Tim">
-            <div class="invalid-feedback" th:if="${#fields.hasErrors('surName')}" th:errors="*{surName}" th:class="error"></div>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('surName')}" th:errors="*{surName}"
+                 th:class="error"></div>
         </div>
         <div class="col-md-3 mb-3">
             <label>Voornaam</label>
             <input type="text" th:field="*{name}" placeholder="Vande Winkel">
-            <div class="invalid-feedback" th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:class="error"></div>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                 th:class="error"></div>
         </div>
         <div class="col-md-3 mb-3">
             <label>Straat</label>
             <input type="text" th:field="*{street}" placeholder="Winkelstraat">
-            <div class="invalid-feedback" th:if="${#fields.hasErrors('street')}" th:errors="*{street}" th:class="error"></div>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('street')}" th:errors="*{street}"
+                 th:class="error"></div>
         </div>
         <div class="col-md-3 mb-3">
             <label>Huisnummer</label>
             <input type="text" th:field="*{houseNumber}" placeholder="35">
-            <div class="invalid-feedback" th:if="${#fields.hasErrors('houseNumber')}" th:errors="*{houseNumber}" th:class="error"></div>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('houseNumber')}" th:errors="*{houseNumber}"
+                 th:class="error"></div>
         </div>
     </div>
     <div class="form-row">
@@ -80,22 +102,27 @@
         <div class="col-md-3 mb-3">
             <label>Postcode</label>
             <input type="text" th:field="*{postalCode}" placeholder="9876">
-            <div class="invalid-feedback" th:if="${#fields.hasErrors('postalCode')}" th:errors="*{postalCode}" th:class="error"></div>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('postalCode')}" th:errors="*{postalCode}"
+                 th:class="error"></div>
         </div>
         <div class="col-md-3 mb-3">
             <label>Woonplaats</label>
             <input type="text" th:field="*{place}" placeholder="Winkelgem">
-            <div class="invalid-feedback" th:if="${#fields.hasErrors('place')}" th:errors="*{place}" th:class="error"></div>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('place')}" th:errors="*{place}"
+                 th:class="error"></div>
         </div>
         <div class="col-md-3 mb-3">
             <label>E-mailadres</label>
             <input type="text" th:field="*{email}" placeholder="jefkevanhoutem@gmail.com">
-            <div class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:class="error"></div>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                 th:class="error"></div>
         </div>
     </div>
     <button class="btn btn-primary" th:field="submit">Bestelling bevestigen</button>
     <btn class="btn btn-primary" onclick="goBack()">Terug naar winkelmandje</btn>
 </form>
-<div th:replace="~{menu::footer}"></div>
+
 </body>
+
+<div th:replace="~{menu::footer}"></div>
 </html>

@@ -1,7 +1,7 @@
 <!--Brecht-->
 <!DOCTYPE html>
 <html lang="en"
-xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +14,8 @@ xmlns:th="http://www.thymeleaf.org">
           crossorigin="anonymous">
 
     <!-- fontawesome stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
     <!-- css -->
     <link rel="stylesheet" th:href="@{~/css/main.css}">
@@ -38,19 +39,37 @@ xmlns:th="http://www.thymeleaf.org">
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#producttable').DataTable();
-        } );
+        $(document).ready(function () {
+            $('#producttable').DataTable({
+                "language": {
+                    "search": "Zoek",
+                    "paginate": {
+                        "first": "Eerste",
+                        "last": "Laatste",
+                        "next": "Volgende",
+                        "previous": "Vorige"
+                    },
+                    "lengthMenu": "Toon _MENU_ producten",
+                },
+                "paging": true,
+                "info": false,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true
+            });
+        });
     </script>
 
 </head>
 <body>
+
 <div th:replace="~{menu::header}"></div>
 <div th:replace="~{menu::navigation}"></div>
+
 <div><h2>Productcatalogus</h2></div>
 <div id="products" class="table-responsive">
-<table id="producttable" class="table">
-    <thead>
+    <table id="producttable" class="table">
+        <thead>
         <tr>
             <th>Product</th>
             <th>Diersoort</th>
@@ -58,18 +77,19 @@ xmlns:th="http://www.thymeleaf.org">
             <th>Details</th>
             <th>Toevoegen</th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         <tr th:each="Product:${all}">
             <td th:text="${Product.name}"></td>
             <td th:text="${Product.species}"></td>
             <td th:text="${Product.price}"></td>
             <td><a class="btn btn-primary" th:href="@{/details/{id}(id=${Product.id})}">Toon meer details</a></td>
-            <td><a  th:href="@{/index/add/{id}(id = ${Product.id})}"><i class="fas fa-shopping-cart"> </i></a></td>
+            <td><a th:href="@{/index/add/{id}(id = ${Product.id})}"><i class="fas fa-shopping-cart"> </i></a></td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
-<div th:replace="~{menu::footer}"></div>
+
 </body>
+<div th:replace="~{menu::footer}"></div>
 </html>

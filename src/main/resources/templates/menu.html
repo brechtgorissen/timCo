@@ -14,7 +14,8 @@
           crossorigin="anonymous">
 
     <!-- fontawesome stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
     <!-- css -->
     <link rel="stylesheet" th:href="@{css/main.css}">
@@ -35,16 +36,18 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#producttable').DataTable();
-        } );
+        });
     </script>
 
 </head>
 <body>
 <div id="header" th:fragment="header" class="row">
     <div class="col-sm-3">
-        <img class="rounded-circle" src="https://previews.123rf.com/images/yod67/yod671602/yod67160200012/53007354-vector-group-of-pets-horse-dog-cat-bird-butterfly-dragonfly-isolated-on-white-background.jpg" width="200">
+        <img class="rounded-circle"
+             src="https://previews.123rf.com/images/yod67/yod671602/yod67160200012/53007354-vector-group-of-pets-horse-dog-cat-bird-butterfly-dragonfly-isolated-on-white-background.jpg"
+             width="200">
     </div>
     <div class="col-sm-9">
         <h1>Tim & Co</h1>
@@ -53,7 +56,7 @@
 <nav id="navigation" th:fragment="navigation">
     <ul class="nav nav-pills">
         <li class="nav-item">
-            <a  class="nav-link" th:href="@{/index}"><i class="fas fa-home"></i></a>
+            <a class="nav-link" th:href="@{/index}"><i class="fas fa-home"></i></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" th:href="@{/index/{voeding}(voeding='Voeding')}">Voeding</a>
@@ -65,7 +68,7 @@
             <a class="nav-link" th:href="@{/index/{habitat}(habitat='Habitat')}">Habitat</a>
         </li>
         <li class="nav-item">
-            <a  class="nav-link" th:href="@{/basket}"><i class="fas fa-shopping-cart"> </i></a>
+            <a class="nav-link" th:href="@{/basket}"><i class="fas fa-shopping-cart"> </i></a>
 
     </ul>
 </nav>
