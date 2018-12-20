@@ -1,10 +1,27 @@
 html body{
     width: 100%;
     background-color: antiquewhite;
-    color: dodgerblue;
+    color: darkolivegreen;
     padding: 20px;
+}
+
+.nav-item {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#header{
+    left: 0;
+    top: 0;
+    z-index: 100000;;
 }
 
 footer{
     text-align: center;
+}
+
+
+#navigation{
+    background-color: darkorange;
+    color: antiquewhite;
 }
