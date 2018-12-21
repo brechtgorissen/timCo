@@ -91,6 +91,12 @@
             <td><a class="button" th:href="@{/basket/delete/{id}(id=${Product.id})}"><i
                     class="far fa-trash-alt"></i></a></td>
         </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Totaal</td>
+            <td th:each="Product:${basket}" th:text="Product.price"</td>
+        </tr>
         </tbody>
     </table>
 </div>
