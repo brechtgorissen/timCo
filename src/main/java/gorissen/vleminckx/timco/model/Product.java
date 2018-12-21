@@ -8,8 +8,8 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-
-//Liesbeth
+//Product class with Entity annotation for connection with datasource
+//POYO with field annotations for validation
 @Entity
 public class Product {
 
@@ -83,7 +83,7 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
-
+    //equals override to remove products from basket based on product id
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
