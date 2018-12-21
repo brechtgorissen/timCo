@@ -83,6 +83,7 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
+
     //equals override to remove products from basket based on product id
     @Override
     public boolean equals(Object o) {

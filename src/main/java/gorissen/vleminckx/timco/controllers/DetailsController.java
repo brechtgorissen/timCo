@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 //controller class for details.html page
 @Controller
 public class DetailsController {
+
     //implementation of basic queries from ProductRepository
     @Autowired
     private ProductRepository repo;
+
     // request mapping to return details.html for product with specific id, using query from ProductRepository
     @RequestMapping(value = "/details/{id}", method = RequestMethod.GET)
     public String showDetails(@PathVariable(name = "id") int id, ModelMap map) {
@@ -24,6 +26,7 @@ public class DetailsController {
         map.addAttribute("product", detailProduct);
         return "details";
     }
+
     // request mapping using Product id to add product to Basket from details.html
     @RequestMapping(value = "/details/add/{id}", method = RequestMethod.GET)
     public String addToBasket(@PathVariable(value = "id") int id, ModelMap map) {

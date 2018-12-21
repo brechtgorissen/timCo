@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>basket</title>
+    <title>Winkelmandje</title>
 
     <!-- bootstrap stylesheet -->
     <link rel="stylesheet"
@@ -12,7 +12,7 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
 
-    <!-- fontawesome stylesheet -->
+    <!-- fontawesome stylesheet for cart, trash & home icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
           integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
@@ -37,6 +37,7 @@
     <!-- scripts datatable-->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <!-- adjusting properties of DataTable + adjusting language -->
     <script>
         $(document).ready(function () {
             $('#baskettable').DataTable({
@@ -58,16 +59,8 @@
             });
         });
     </script>
-
-    <!-- script goback-->
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
-
-
 </head>
+
 <body>
 <div th:replace="~{menu::header}"></div>
 <div th:replace="~{menu::navigation}"></div>
@@ -90,12 +83,6 @@
             <td><a class="button" th:href="@{/basket/delete/{id}(id=${Product.id})}"><i
                     class="far fa-trash-alt"></i></a></td>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>Totaal</td>
-            <td th:each="Product:${basket}" th:text="Product.price"</td>
-        </tr>
         </tbody>
     </table>
 </div>
@@ -103,8 +90,8 @@
     <a class="btn btn-primary" th:href="@{/index}">Verder Winkelen</a>
     <a class="btn btn-primary" th:href="@{/checkout}">Bestelling afronden</a>
 </div>
-
 </body>
 
 <div th:replace="~{menu::footer}"></div>
+
 </html>

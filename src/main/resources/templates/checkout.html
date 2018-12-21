@@ -12,7 +12,7 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
 
-    <!-- fontawesome stylesheet -->
+    <!-- fontawesome stylesheet for cart, trash & home icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
           integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
@@ -37,6 +37,7 @@
     <!-- scripts datatable-->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <!-- adjusting properties of DataTable + adjusting language -->
     <script>
         $(document).ready(function () {
             $('#producttable').DataTable({
@@ -59,8 +60,8 @@
         });
     </script>
 
-
 </head>
+
 <body>
 <div th:replace="~{menu::header}"></div>
 <div th:replace="~{menu::navigation}"></div>
@@ -116,16 +117,17 @@
     <div class="form-row">
         <div class="col-sm-4">
             <label>E-mailadres</label><br>
-            <input type="text" th:field="*{email}" placeholder="jefkevanhoutem@gmail.com">
+            <input type="text" th:field="*{email}" placeholder="timvdw@gmail.com">
             <div class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
                  th:class="error"></div>
         </div>
-    </div><br>
+    </div>
+    <br>
     <a class="btn btn-primary" th:href="@{/basket}">Terug naar winkelmandje</a>
     <button class="btn btn-primary" th:field="submit">Bestelling bevestigen</button>
 </form>
-
 </body>
 
 <div th:replace="~{menu::footer}"></div>
+
 </html>

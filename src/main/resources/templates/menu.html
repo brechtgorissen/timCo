@@ -12,7 +12,7 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
 
-    <!-- fontawesome stylesheet -->
+    <!-- fontawesome stylesheet for cart, trash & home icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
           integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
@@ -29,11 +29,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
-
-
-
 </head>
+
 <body>
+
 <div id="header" th:fragment="header" class="row container-fluid">
     <div class="col-sm-3">
         <img class="rounded-circle"
@@ -44,6 +43,7 @@
         <h1>Tim & Co</h1>
     </div>
 </div>
+
 <nav id="navigation" th:fragment="navigation" class="container-fluid">
     <ul class="nav nav-pills">
         <li class="nav-item">
@@ -60,11 +60,13 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" th:href="@{/basket}"><i class="fas fa-shopping-cart"> </i></a>
-
     </ul>
 </nav>
+
 <footer th:fragment="footer">
     &copy;Tim&Co BVBA, 2018
 </footer>
+
 </body>
+
 </html>

@@ -2,6 +2,7 @@ package gorissen.vleminckx.timco.model;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+
 //User class, POYO with field annotations used for validation in checkout.html
 public class User {
 
